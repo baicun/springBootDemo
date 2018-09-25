@@ -1,0 +1,99 @@
+/* 字体   */
+@font-face{font-family: 'webfont';
+    src:url('../fonts/webfont.eot'); /* IE9*/
+    src:url('../fonts/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/webfont.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+}
+/* 字体图标    */
+@font-face {
+  font-family:'iconfont';
+  src:url('../fonts/iconfont.eot');
+  src:url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/iconfont.woff') format('woff'),
+  url('../fonts/iconfont.ttf') format('truetype'),
+  url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+/* 默认样式.css start */
+html,
+body{ 
+	height:100%;
+}
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+dd,
+th,
+td,
+input,
+select,
+form,
+textarea{
+	margin:0; 
+	padding:0; 
+	font-size:12px; 
+	/*font-family:'PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,Open Sans,Helvetica Neue,Arial,sans-serif';*/
+	/*font-family:'webfont','Microsoft YaHei','Arial';*/
+	font-family: 'PingFang SC','webfont';
+	color:#000; 
+	font-weight:normal;
+}
+textarea{
+	resize:none; 
+	overflow:auto;
+	outline:none;
+}
+table{
+	border-collapse:collapse;
+}
+li{
+	list-style:none;
+	overflow:hidden; 
+	zoom:1;
+}
+a{
+	text-decoration:none; 
+	outline:none;
+}
+img{
+	border:none; 
+	vertical-align:top;
+}
+input{
+	border:none;
+	outline:none;
+}
+input::-ms-clear{  /* 取消ie10+ x */
+    display:none;
+} 
+strong{
+	font-weight:normal;
+}
+i,
+em{
+	font-style:normal;
+}
+.clear:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.clear{
+	zoom:1;
+}
+.fl{ 
+	float:left;
+}
+.fr{ 
+	float:right;
+}
+/* 默认样式.css end */

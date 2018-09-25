@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>SpingBoot模板引擎</title>
+</head>
+<body>
+<form action="add" method="post">
+    用户邮箱：<input th:type="text" name="mid" th:value="baicun126.com"/><br/>
+    用户年龄：<input th:type="text" name="age" th:value="25"/><br/>
+    用户工资：<input th:type="text" name="salary" th:value="1234"/><br/>
+    用户生日：<input th:type="text" name="birthday" th:value="2018-09-18"/><br/>
+    <input th:type="submit" th:value="提交"/>
+    <input th:type="reset" th:value="重置"/>
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>中诚信征信</title>
+</head>
+<body>
+<!--<div th:replace="@{/common/footer}::companyInfo"></div>-->
+<div th:include="@{/common/footer}::companyInfo" th:with="itemid=1,subid=11"></div>
+<a href="javaScript:;" id="out_login">&#xe624;</a>
+<div th:include="@{/common/footer}::companyInfo"></div>
+<hr/>
+    <!- List集合迭代输出 start-->
+    <table>
+        <tr><td>NO.</td><td>MID</td><td>姓名</td><td>年龄</td><td>偶数</td><td>奇数</td></tr>
+        <tr th:each="member,memberStat:${memberList}">
+            <td th:text="${memberStat.index +1}"></td>
+            <td th:text="${member.mid}"></td>
+            <td th:text="${member.name}"></td>
+            <td th:text="${member.age}"></td>
+            <td th:text="${memberStat.even}"></td>
+            <td th:text="${memberStat.odd}"></td>
+        </tr>
+    </table>
+    <!- List集合迭代输出 edd-->
+    <hr/>
+    <!- Map集合迭代输出 start-->
+    <table>
+        <!--map一般操作-->
+        <p th:text="${#maps.containsKey(memberMap, 'mldn2')}"/>
+        <p th:text="${memberMap['mldn2'].name}"/>
+        <!-- 内容替换... -->
+        <p th:text="${#strings.replace('世界和平','世界','中国')}"/>
+        <tr><td>NO.</td><td>KEY</td><td>MID</td><td>姓名</td><td>年龄</td><td>偶数</td><td>奇数</td></tr>
+        <tr th:each="memberEntry,memberStat:${memberMap}">
+            <td th:text="${memberStat.index +1}"></td>
+            <td th:text="${memberEntry.key}"></td>
+            <td th:text="${memberEntry.value.mid}"></td>
+            <td th:text="${memberEntry.value.name}"></td>
+            <td th:text="${memberEntry.value.age}"></td>
+            <td th:text="${memberStat.even}"></td>
+            <td th:text="${memberStat.odd}"></td>
+        </tr>
+    </table>
+    <!- Map集合迭代输出 edd-->
+</div>
+<hr/>
+</body>
+
+</html>

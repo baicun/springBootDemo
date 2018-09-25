@@ -1,0 +1,11 @@
+server:
+  port: 80
+spring:
+  messages:
+    basename: 18n/Messages,i18n/Pages
+  jms:
+    pub-sub-domain: false   # 配置消息类型，如果是 true 则表示为 topic 消息，如果是 false 表示为 Queue 消息
+  activemq:
+    user: mldnjava   # 连接用户名
+    password: hello  # 密码
+    broker-url:  tcp://activemq-server:61616  # 消息组件的连接主机信息

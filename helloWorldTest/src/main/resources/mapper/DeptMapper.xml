@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.DeptMapper">
+
+    <select id="findAll" resultType="int">
+        select * from dept;
+    </select>
+
+    <select id="getSum" resultType="Dept">
+        select count(1) from dept;
+    </select>
+
+    <insert id="doInsert" parameterType="Dept">
+        INSERT INTO dept(dname) VALUES (#{dname});
+    </insert>
+
+</mapper>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
+    <title> Thymeleaf 模板渲染</title>
+    <script type="text/javascript" th:src="@{/assets/js/test/test.js}"></script>
+</head>
+<body>
+    <a th:href="@{/show}" th:text="访问"></a>
+    <hr/>
+    <!--转义标签-->
+    <p th:text="'官方网站：' + ${url} "/>
+    <!--原样展示-->
+    <p th:utext="'官方网站：' + ${url} "/>
+    <hr/>
+    <!--展示配置文件中的信息 start -->
+    <h2 th:text="#{welcome.url}"></h2>
+    <!--展示配置文件中的信息,含有入参 -->
+    <h2 th:text="#{welcome.msg}"></h2>
+    <h2 th:text="#{welcome.msg('baicun')}"></h2>
+    <!--展示配置文件中的信息 end -->
+    <hr/>
+    <!--公式计算 start -->
+    <p th:text="'数学计算：' + (1+2) "/>
+    <p th:utext="'数学计算：' + (1+2) "/>
+    <!--公式计算 end -->
+</body>
+
+</html>
