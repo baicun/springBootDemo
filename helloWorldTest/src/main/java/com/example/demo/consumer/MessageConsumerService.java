@@ -14,6 +14,7 @@ public class MessageConsumerService {
      */
     @JmsListener(destination="mldn.msg.queue")
     public void receiveMessage(String text) {
+        System.out.println("text = [" + text + "]");
         System.out.println("接受消息：text = [" + text + "]");
     }
 }
