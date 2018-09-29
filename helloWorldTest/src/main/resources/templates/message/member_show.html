@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>中诚信征信</title>
+</head>
+<body>
+<div>
+    <p th:text="'用户：' + ${member.mid} "/>
+    <p th:text="'年龄：' + ${member.age} "/>
+    <p th:text="'工资：' + ${member.salary} "/>
+    <p th:text="'生日：' + ${member.birthday} "/>
+    <p th:text="'生日：' + ${#dates.format(member.birthday, 'yyyy-MM-dd')} "/>
+</div>
+<hr/>
+<!--注意 $ 访问完整对象信息；* 既可以访问完整对象信息还可以访问被th:object声明的全局变量后的信息-->
+<div th:object="${member}">
+    <p th:text="'用户：' + *{mid} "/>
+    <p th:text="'年龄：' + *{age} "/>
+    <p th:text="'工资：' + *{salary} "/>
+    <p th:text="'生日：' + *{birthday} "/>
+    <p th:text="'生日：' + *{#dates.format(birthday, 'yyyy-MM-dd')} "/>
+</div>
+<hr/>
+<div>
+    <span th:if="${member.age > 18}">
+        最好的编程语言：
+    </span>
+    <span th:if="${member.mid eq 'baicun'}">
+        java
+    </span>
+    <span th:unless="${member.age gt 30}">
+        <p th:text="'赞同'"/>
+    </span>
+</div>
+<hr/>
+<div>
+    <span th:switch="${member.mid}">
+        <p th:case="baicun">成员baicun</p>
+        <p th:case="102">成员102</p>
+        <p th:case="*">没有成员</p>
+    </span>
+</div>
+</body>
+
+</html>

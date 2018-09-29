@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
+    <title> Thymeleaf 模板渲染</title>
+</head>
+<body>
+    <p th:text="'url：' + ${url} "/>
+    <p th:text="'msg：' + ${msg} "/>
+    <p th:text="'url：' + *{url} "/>
+    <p th:text="'msg：' + *{msg} "/>
+    <hr/>
+    <p th:utext="'requestMessage：' + *{requestMessage} "/>
+    <p th:text="'requestSession:'  + ${session.requestSession}" />
+    <p th:text="'requestServletContext:' + ${requestServletContext}"/>
+    <hr/>
+    <p th:text="${#httpServletRequest.getRemoteAddr()}"/>
+    <p th:text="${#httpServletRequest.getAttribute('requestMessage')}"/>
+    <p th:text="${#httpSession.getId()}"/>
+    <p th:text="${#servletContext.getRealPath('/')}"/>
+    <p th:text="${#httpServletRequest.getServletContext().getRealPath('/')}"/>
+</body>
+
+</html>
